@@ -2,6 +2,7 @@
 
 from setuptools import setup, find_packages
 
+REQUIREMENTS = [i.strip() for i in open("REQUIREMENTS").readlines()]
 # LONG_DESCRIPTION = open(os.path.join(os.path.dirname(__file__), 'README.rst')).read(),
 LONG_DESCRIPTION = ''
 
@@ -31,9 +32,7 @@ setup(
     license='Apache 2.0',
     platforms=['OS Independent'],
     classifiers=CLASSIFIERS,
-    install_requires=[
-        'Django==1.9.5',
-    ],
+    install_requires=REQUIREMENTS,
     packages=find_packages(exclude=["project", "project.*"]),
     include_package_data=True,
     zip_safe=False
